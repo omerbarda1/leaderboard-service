@@ -8,16 +8,13 @@ import { LeaderboardModule } from './leaderboard/leaderboard.module';
   imports: [
     TypeOrmModule.forRoot({
       type: 'postgres',
+      host: 'postgres',
+      port: 5432,
+      username: 'postgres',
+      password: 'postgres',
       database: 'leaderboard',
       synchronize: true,
       autoLoadEntities: true,
-      host: process.env.POSTGRES_HOST,
-      port: parseInt(process.env.POSTGRES_PORT || '5432'),
-      username: process.env.POSTGRES_USER,
-      password: process.env.POSTGRES_PASSWORD,
-      name: process.env.POSTGRES_DB,
-  
-
     }),
     UsersModule,
     RedisModule,
