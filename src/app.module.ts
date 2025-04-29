@@ -8,9 +8,11 @@ import { LeaderboardModule } from './leaderboard/leaderboard.module';
   imports: [
     TypeOrmModule.forRoot({
       type: 'postgres',
+      host: 'postgres',
+      port: 5432,
       username: 'postgres',
       password: 'postgres',
-      database:'leaderboard',
+      database: 'leaderboard',
       synchronize: true,
       autoLoadEntities: true,
 
